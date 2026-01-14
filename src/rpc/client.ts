@@ -1,6 +1,7 @@
 // Based on https://github.com/jdiaz5513/capnp-ts (MIT - Julián Díaz)
 
 import { Struct } from "../serialization/pointers/struct";
+import { Conn } from './conn'
 import { Call } from "./call";
 import { Answer } from "./answer";
 import { PipelineOp } from "./pipeline-op";
@@ -10,6 +11,7 @@ import { getInterfaceClientOrNull } from "../serialization/pointers/struct.utils
 
 // A Client represents an Cap'n Proto interface type.
 export interface Client {
+  readonly conn?: Conn
   // call starts executing a method and returns an answer that will hold
   // the resulting struct.  The call's parameters must be placed before
   // call() returns.

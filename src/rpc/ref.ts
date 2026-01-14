@@ -26,6 +26,10 @@ export class Ref implements Client {
     });
   }
 
+  get conn() {
+    return this.rc.conn;
+  }
+
   call<P extends Struct, R extends Struct>(cl: Call<P, R>): Answer<R> {
     return this.rc.call(cl);
   }

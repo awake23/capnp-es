@@ -31,6 +31,10 @@ export class RefCount implements Client {
     return [rc, ref];
   }
 
+  get conn() {
+    return this._client.conn;
+  }
+
   call<P extends Struct, R extends Struct>(cl: Call<P, R>): Answer<R> {
     return this._client.call(cl);
   }

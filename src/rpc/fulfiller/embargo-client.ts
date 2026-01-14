@@ -27,6 +27,10 @@ export class EmbargoClient implements Client {
     this.flushQueue();
   }
 
+  get conn() {
+    return this._client.conn;
+  }
+
   flushQueue(): void {
     let c: ecallSlot = null;
     {

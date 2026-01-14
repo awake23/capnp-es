@@ -31,6 +31,10 @@ export class Fulfiller<R extends Struct> implements Answer<R> {
   queueCap = callQueueSize;
   deferred = new Deferred<R>();
 
+  get conn() {
+    return this.answer?.conn;
+  }
+  
   fulfill(s: R): void {
     this.answer = new ImmediateAnswer(s);
     const queues = this.emptyQueue(s);

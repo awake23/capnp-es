@@ -17,6 +17,10 @@ export class LocalAnswerClient<T extends Struct> implements Client {
     public transform: PipelineOp[],
   ) {}
 
+  get conn() {
+    return this.a.conn;
+  }
+  
   call<P extends Struct, R extends Struct>(call: Call<P, R>): Answer<R> {
     if (this.a.done) {
       return clientFromResolution(this.transform, this.a.obj, this.a.err).call(

@@ -21,6 +21,7 @@ import { QueueClient, callQueueSize } from "./queue-client";
 // An Answer is the deferred result of a client call, which is usually wrapped
 // by a Pipeline.
 export interface Answer<R extends Struct> {
+  readonly conn?: Conn;
   // struct waits until the call is finished and returns the result.
   struct(): Promise<R>;
 

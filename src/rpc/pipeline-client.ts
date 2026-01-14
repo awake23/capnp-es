@@ -20,6 +20,10 @@ export class PipelineClient<
     public pipeline: Pipeline<AnswerResults, ParentResults, Results>,
   ) {}
 
+  get conn() {
+    return this.pipeline.answer.conn
+  }
+
   transform(): PipelineOp[] {
     return this.pipeline.transform();
   }
