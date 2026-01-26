@@ -18,7 +18,7 @@ export class Node_Parameter extends $.Struct {
     $.utils.setText(0, value, this);
   }
   get hasName(): boolean {
-    return !$.utils.isNull($.Text.fromPointer($.utils.getPointer(0, this)));
+    return !$.utils.isNull($.utils.getPointer(0, this));
   }
   toString(): string { return "Node_Parameter_" + super.toString(); }
 }
@@ -41,7 +41,7 @@ export class Node_NestedNode extends $.Struct {
     $.utils.setText(0, value, this);
   }
   get hasName(): boolean {
-    return !$.utils.isNull($.Text.fromPointer($.utils.getPointer(0, this)));
+    return !$.utils.isNull($.utils.getPointer(0, this));
   }
   /**
 * ID of the nested node.  Typically, the target node's scopeId points back to this node, but
@@ -73,7 +73,7 @@ export class Node_SourceInfo_Member extends $.Struct {
     $.utils.setText(0, value, this);
   }
   get hasDocComment(): boolean {
-    return !$.utils.isNull($.Text.fromPointer($.utils.getPointer(0, this)));
+    return !$.utils.isNull($.utils.getPointer(0, this));
   }
   toString(): string { return "Node_SourceInfo_Member_" + super.toString(); }
 }
@@ -113,7 +113,7 @@ export class Node_SourceInfo extends $.Struct {
     $.utils.setText(0, value, this);
   }
   get hasDocComment(): boolean {
-    return !$.utils.isNull($.Text.fromPointer($.utils.getPointer(0, this)));
+    return !$.utils.isNull($.utils.getPointer(0, this));
   }
   initMembers(length: number): $.List<Node_SourceInfo_Member> {
     return $.utils.initList(1, Node_SourceInfo._Members, length, this);
@@ -565,7 +565,7 @@ export class Node extends $.Struct {
     $.utils.setText(0, value, this);
   }
   get hasDisplayName(): boolean {
-    return !$.utils.isNull($.Text.fromPointer($.utils.getPointer(0, this)));
+    return !$.utils.isNull($.utils.getPointer(0, this));
   }
   /**
 * If you want a shorter version of `displayName` (just naming this node, without its surrounding
@@ -930,7 +930,7 @@ export class Field extends $.Struct {
     $.utils.setText(0, value, this);
   }
   get hasName(): boolean {
-    return !$.utils.isNull($.Text.fromPointer($.utils.getPointer(0, this)));
+    return !$.utils.isNull($.utils.getPointer(0, this));
   }
   /**
 * Indicates where this member appeared in the code, relative to other members.
@@ -1041,7 +1041,7 @@ export class Enumerant extends $.Struct {
     $.utils.setText(0, value, this);
   }
   get hasName(): boolean {
-    return !$.utils.isNull($.Text.fromPointer($.utils.getPointer(0, this)));
+    return !$.utils.isNull($.utils.getPointer(0, this));
   }
   /**
 * Specifies order in which the enumerants were declared in the code.
@@ -1125,7 +1125,7 @@ export class Method extends $.Struct {
     $.utils.setText(0, value, this);
   }
   get hasName(): boolean {
-    return !$.utils.isNull($.Text.fromPointer($.utils.getPointer(0, this)));
+    return !$.utils.isNull($.utils.getPointer(0, this));
   }
   /**
 * Specifies order in which the methods were declared in the code.
@@ -2157,7 +2157,7 @@ export class Value extends $.Struct {
     return $.utils.getUint16(0, this) === 12;
   }
   get hasText(): boolean {
-    return !$.utils.isNull($.Text.fromPointer($.utils.getPointer(0, this)));
+    return !$.utils.isNull($.utils.getPointer(0, this));
   }
   initData(length: number): $.Data {
     $.utils.setUint16(0, 13, this);
@@ -2407,7 +2407,7 @@ export class CodeGeneratorRequest_RequestedFile_Import extends $.Struct {
     $.utils.setText(0, value, this);
   }
   get hasName(): boolean {
-    return !$.utils.isNull($.Text.fromPointer($.utils.getPointer(0, this)));
+    return !$.utils.isNull($.utils.getPointer(0, this));
   }
   toString(): string { return "CodeGeneratorRequest_RequestedFile_Import_" + super.toString(); }
 }
@@ -2441,7 +2441,7 @@ export class CodeGeneratorRequest_RequestedFile extends $.Struct {
     $.utils.setText(0, value, this);
   }
   get hasFilename(): boolean {
-    return !$.utils.isNull($.Text.fromPointer($.utils.getPointer(0, this)));
+    return !$.utils.isNull($.utils.getPointer(0, this));
   }
   initImports(length: number): $.List<CodeGeneratorRequest_RequestedFile_Import> {
     return $.utils.initList(1, CodeGeneratorRequest_RequestedFile._Imports, length, this);

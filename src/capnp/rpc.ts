@@ -2681,7 +2681,7 @@ export class Exception extends $.Struct {
     $.utils.setText(0, value, this);
   }
   get hasReason(): boolean {
-    return !$.utils.isNull($.Text.fromPointer($.utils.getPointer(0, this)));
+    return !$.utils.isNull($.utils.getPointer(0, this));
   }
   /**
 * The type of the error. The purpose of this enum is not to describe the error itself, but
@@ -2727,7 +2727,7 @@ export class Exception extends $.Struct {
     $.utils.setText(1, value, this);
   }
   get hasTrace(): boolean {
-    return !$.utils.isNull($.Text.fromPointer($.utils.getPointer(1, this)));
+    return !$.utils.isNull($.utils.getPointer(1, this));
   }
   toString(): string { return "Exception_" + super.toString(); }
 }

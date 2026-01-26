@@ -388,19 +388,11 @@ export function generateStructFieldMethods(
   }
 
   if (has) {
-    if (whichType === schema.Type.TEXT) {
-      members.push(`
-        get has${capitalizedName}(): boolean {
-          return !$.utils.isNull($.Text.fromPointer($.utils.getPointer(${offset}, this)));
-        }
-      `);
-    } else {
-      members.push(`
-        get has${capitalizedName}(): boolean {
-          return !$.utils.isNull($.utils.getPointer(${offset}, this));
-        }
-      `);
-    }
+    members.push(`
+      get has${capitalizedName}(): boolean {
+        return !$.utils.isNull($.utils.getPointer(${offset}, this));
+      }
+    `);
   }
 }
 /**
